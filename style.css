@@ -329,7 +329,7 @@ body, html {
   font-size: 2rem;
   color: #0a73c0;
   margin-right: 0; /* No space between the icon and heading */
-  align-self: center; /* Vertically center the icon */
+  align-self: flex-start; /* Align icon to the left */
   margin-top: 0; /* Remove any margin top */
 }
 
@@ -337,21 +337,19 @@ body, html {
 .feature-card h3 {
   font-size: 1.2rem;
   color: #000;
-  display: flex; /* Align icon and heading horizontally */
+  display: inline-flex; /* Align icon and heading horizontally */
   align-items: center; /* Vertically center icon and heading */
-  gap: 0; /* No gap between the icon and heading */
+  gap: 0; /* No gap between icon and heading */
   margin-bottom: 5px; /* Optional: reduce space below heading */
-  margin-top: 0; /* Optional: remove top margin if necessary */
+  margin-top: -45px; /* Optional: remove top margin if necessary */
 }
-
 
 /* Paragraph (p) */
 .feature-card p {
   font-size: 0.9rem;
   color: #666;
-  margin-top: 5px; /* Moves the paragraph up */
+  margin-top: 15px; /* Moves the paragraph up */
 }
-
 
 
 
