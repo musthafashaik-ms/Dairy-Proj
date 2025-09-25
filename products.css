@@ -1096,8 +1096,9 @@
 
 /* Final footer CSS */
 .FTR-footer {
- background: url("images/footer.png") no-repeat center bottom; /* your image */
+ background: url("images/footerbg.png") no-repeat center bottom; /* your image */
   background-size:  100% auto;
+  background-color: white;
   --ftr-blue: #0078c8;
   --ftr-accent: #0b78c8;
   --ftr-text: #0b3b5a;
@@ -1108,6 +1109,7 @@
   position: relative;
 }
  
+
 /* Top blue strip */
 .FTR-top-strip {
   background: var(--ftr-blue);
@@ -1216,7 +1218,7 @@
  
 .FTR-social:hover {
   background: #39995a;  /* solid green on hover */
-  color: #ffffff;          /* icon turns white */
+  color: #fff;          /* icon turns white */
 }
 /* Column B: Main (right) */
 .FTR-col-main {
@@ -1283,4 +1285,39 @@
   .FTR-headline { font-size:22px; }
   .FTR-bottom { flex-direction:column; align-items:flex-start; gap:8px; padding-top:12px; }
 }
+  /* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #0078c8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+ 
+  /* Center the arrow perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.back-to-top:hover {
+  background: #005a94;
+}
+
+.back-to-top:focus {
+  outline: none;
+}
+
 
