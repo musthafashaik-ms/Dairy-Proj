@@ -107,7 +107,7 @@ body, html {
   gap: 16px; /* Spacing between phone, search, button */
   font-family: Arial, sans-serif;
   margin-left: 160px; /* Reduced to shift the contact section left */
-  margin-top: -40px; /* Adjusted vertical position */
+  margin-top: -18px; /* Adjusted vertical position */
 }
 
 /* Links inside nav-contact */
@@ -139,8 +139,8 @@ body, html {
   justify-content: center;
   align-items: center;
   transition: background 0.3s ease;
-  margin-left: 15px; /* Maintain this if you want horizontal offset */
-  margin-top: -35px; /* Adjust this value to move the button up/down */
+  margin-left: 10px; /* Maintain this if you want horizontal offset */
+  margin-top: -5px; /* Adjust this value to move the button up/down */
 }
 
 /* Hover effect for search button */
@@ -153,8 +153,72 @@ body, html {
   width: 18px;
   height: 18px;
 }
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
- 
+.search-popup {
+  position: absolute;
+  top: 75px; /* Pushes the popup below the button */
+  right: 50px; /* Adjusts the popup to the left */
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+
+/* Triangle Arrow */
+.search-popup::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Positions the arrow above the popup */
+  left: 50%; /* Centers the arrow horizontally */
+  transform: translateX(-50%); /* Adjusts for exact centering */
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #007bff transparent; /* Blue arrow */
+}
+
+/* Inner triangle to create a layered arrow effect */
+.search-popup::after {
+  content: "";
+  position: absolute;
+  top: -8px; /* Slightly lower than the ::before arrow */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 9px 9px 9px;
+  border-style: solid;
+  border-color: transparent transparent white transparent; /* White inner triangle */
+}
+
+.search-popup input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin-right: 8px;
+  font-size: 14px;
+  color: #000;
+}
+
+.search-popup button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-popup button:hover {
+  background-color: #0056b3;
+}
+
 /* Get In Touch Button */
 .btn-outline {
   padding: 10px 20px;
@@ -1269,11 +1333,43 @@ body, html {
   --accent: #227aff;   /* Accent color */
   --muted: #999;       /* Muted text color */
 }
+ /* Blog Section */
+.blog-section {
+  padding: 60px 80px;
+  background: #f9f9f4;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.blog-header h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.blog-nav button {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blog-nav button:hover {
+  background: #eaeaea;
+}
 
 /* Grid container */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 26px;
 }
 
@@ -1282,22 +1378,15 @@ body, html {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  height: 250px;  /* Bigger height */
+  height: 250px;
 }
 
 .thumb img {
   display: block;
   width: 100%;
-  height: 100%;      /* Fill the new height */
+  height: 100%;
   object-fit: cover;
   border-radius: 16px;
-}
-
-/* Optional: make thumbs slightly bigger on larger screens */
-@media (min-width: 1200px) {
-  .thumb {
-    height: 300px;
-  }
 }
 
 /* Tag styles */
@@ -1306,7 +1395,7 @@ body, html {
   left: 12px;
   top: 12px;
   background: #f0f7f0;
-  color: var(--green);  /* Using var(--green) */
+  color: var(--green);
   padding: 6px 10px;
   border-radius: 12px;
   font-weight: 700;
@@ -1318,7 +1407,7 @@ body, html {
   position: absolute;
   right: 12px;
   bottom: 12px;
-  background: var(--accent);  /* Using var(--accent) */
+  background: var(--accent);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -1345,6 +1434,11 @@ body, html {
   color: #20323a;
 }
 
+/* Hidden posts */
+.hidden {
+  display: none;
+}
+
 /* Responsive breakpoints */
 @media (max-width: 980px) {
   .grid {
@@ -1361,6 +1455,200 @@ body, html {
   }
 }
 
+/*
+
+* Blog Section (HBP-) */
+.HBP-section {
+  font-family: 'Montserrat', sans-serif;
+  background: #f9f9f3;
+  padding: 60px 40px;
+  text-align: center;
+}
+ 
+/* Blog Section (HBP-) */
+.HBP-section {
+  font-family: 'Montserrat', sans-serif;
+  background: #f9f9f3;
+  padding: 60px 40px;
+}
+ 
+/* Header Row */
+.HBP-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+ 
+.HBP-header-left {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ 
+.HBP-subtitle {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5b42;
+  margin-bottom: 8px;
+}
+ 
+.HBP-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #2a352a;
+  margin: 0;
+}
+ 
+/* Nav Arrows */
+.HBP-nav {
+  display: flex;
+  gap: 12px;
+}
+ 
+.HBP-nav-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+ 
+.HBP-nav-btn:hover {
+  background: #f1f1f1;
+}
+ 
+/* Blog Cards Grid */
+.HBP-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+ 
+.HBP-card {
+  background: #f9f9f3;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+}
+ 
+.HBP-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+ 
+.HBP-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+ 
+.HBP-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #fff;
+  color: #4a5b42;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+ 
+.HBP-arrow {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0078c8;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+ 
+/* Meta Info */
+.HBP-meta {
+  display: flex;
+  gap: 18px;
+  margin: 16px 0 10px;
+  font-size: 13px;
+  color: #4a5b42;
+  font-weight: 500;
+  padding-left: 1em;
+}
+ 
+.HBP-meta i {
+  margin-right: 6px;
+  color: #5b7f5c;
+}
+ 
+.HBP-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2a352a;
+  line-height: 1.4;
+  margin: 0;
+  padding-left: 0.5em;   /* small left padding to prevent clipping */
+  overflow: visible;     /* ensure text isn't hidden */
+  margin-bottom: 10px;
+}
+ 
+/* Responsive */
+@media (max-width: 980px) {
+  .HBP-cards {
+    grid-template-columns: 1fr;
+  }
+  .HBP-title {
+    font-size: 28px;
+  }
+  .HBP-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+ 
+.HBP-cards-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+ 
+.HBP-cards {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+ 
+/* Each card */
+.HBP-card {
+  min-width: calc(33.333% - 13.333px); /* 3 cards visible */
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+ 
 
 /* ------------------- */
 /* Testimonial Section */
@@ -1489,6 +1777,7 @@ body, html {
   background: #f1f1f1;
 }
 
+
 /* Final footer CSS */
 .FTR-footer {
  background: url("images/footerbg.png") no-repeat center bottom; /* your image */
@@ -1502,6 +1791,7 @@ body, html {
   color: var(--ftr-text);
   box-sizing: border-box;
   position: relative;
+  
 }
  
 
@@ -1680,5 +1970,40 @@ body, html {
   .FTR-headline { font-size:22px; }
   .FTR-bottom { flex-direction:column; align-items:flex-start; gap:8px; padding-top:12px; }
 }
+
  
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #0078c8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+ 
+  /* Center the arrow perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.back-to-top:hover {
+  background: #005a94;
+}
+
+.back-to-top:focus {
+  outline: none;
+}
 
