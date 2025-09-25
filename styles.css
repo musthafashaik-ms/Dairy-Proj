@@ -545,23 +545,19 @@ body, html {
   padding: 0 20px;     /* side padding */
 }
 /* -------------------- About Section -------------------- */
-/* About Section Styling */
+/* About Section */
 .about {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 40px; /* Added 40px for left and right padding */
+  padding: 60px;
   background: #fafaf5;
   gap: 40px;
-  width: 100%; /* Ensure it takes full width */
-  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-/* About Image Section */
 .about-image {
-  position: relative;
+  position: relative; /* Important: to position stats-card relative to image */
   flex: 1;
-  padding-right: 20px; /* Added padding for right side spacing */
 }
 
 .about-image img {
@@ -578,10 +574,10 @@ body, html {
   background: #dadd26;
   width: 200px;       /* Equal width for square */
   height: 180px;      /* Equal height for square */
-  border: 20px solid white;
+  border: 15px solid white;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
 
   display: flex;
   flex-direction: column;
@@ -603,10 +599,9 @@ body, html {
   line-height: 1.2;
 }
 
-/* Right Text Section */
+/* Right Text */
 .about-text {
   flex: 1;
-  padding-left: 20px; /* Added padding for left side spacing */
 }
 
 .about-text .tag {
@@ -658,12 +653,11 @@ body, html {
   color: #555;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 992px) {
   .about {
     flex-direction: column;
     text-align: center;
-    padding: 30px 20px; /* Adjust padding for smaller screens */
   }
 
   .features {

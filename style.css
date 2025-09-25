@@ -317,31 +317,51 @@ body, html {
   padding: 20px;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column; /* Ensure vertical alignment */
+  align-items: center; /* Center the content horizontally */
+  gap: 10px; /* Space between icon, heading, and paragraph */
 }
 
+/* Feature Card Icon */
 .feature-card i {
   font-size: 2rem;
   color: #0a73c0;
-  margin-bottom: 10px;
+  margin-right: 0; /* No space between the icon and heading */
+  align-self: center; /* Vertically center the icon */
+  margin-top: 0; /* Remove any margin top */
 }
 
+/* Heading (h3) */
 .feature-card h3 {
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  color:#000;
+  color: #000;
+  display: flex; /* Align icon and heading horizontally */
+  align-items: center; /* Vertically center icon and heading */
+  gap: 0; /* No gap between the icon and heading */
+  margin-bottom: 5px; /* Optional: reduce space below heading */
+  margin-top: 0; /* Optional: remove top margin if necessary */
 }
 
+
+/* Paragraph (p) */
 .feature-card p {
   font-size: 0.9rem;
   color: #666;
+  margin-top: 5px; /* Moves the paragraph up */
 }
+
+
+
 
 /* About Content */
 .about-content {
   display: flex;
   align-items: center;
   gap: 40px;
+  padding: 0 100px;  /* Increased left and right padding to 100px */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 /* Left Image */
@@ -353,20 +373,28 @@ body, html {
 .about-image img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  
 }
 
 .nutrition-count {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;   /* ✅ move to right side */
+    position: absolute;
+  bottom: 0px;      /* Slight overlap below image */
+  right: -0px;        /* Distance from right */
+  
   background: #0a73c0;
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 12px;
+  width: 200px;       /* Equal width for square */
+  height: 180px;      /* Equal height for square */
+  border: 15px solid white;
+  border-radius: 10px;
   text-align: center;
-}
+  
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
 .nutrition-count h2 {
   font-size: 2rem;
@@ -389,15 +417,24 @@ body, html {
   color: #666;
   display: block;
   margin-bottom: 10px;
+  background-color: rgb(250, 244, 234); /* White background */
+  padding: 5px 15px; /* Add some padding for better spacing */
+  border-radius: 20px; /* Optional: rounded corners for the label */
+  position: relative; /* Allows for top positioning */
+  top: -50px; /* Moves the label 10px upwards */
+  width: fit-content; /* Ensures label width adjusts to text content */
 }
+
 
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   line-height: 1.3;
   color: #000; /* Black text */
+  position: relative; /* Allows for top positioning */
+  top: -30px; /* Moves the label 10px upwards */
+  width: fit-content; /* Ensures label width adjusts to text content */
 }
-
 
 .about-text .highlight {
   color: #0a73c0;
@@ -407,42 +444,51 @@ body, html {
   margin-bottom: 20px;
   color: #555;
   line-height: 1.6;
+   position: relative; /* Allows for top positioning */
+  top: -10px; /* Moves the label 10px upwards */
+  width: fit-content; /* Ensures label width adjusts to text content */
 }
 
-/* Points */
+
+/* Points Container */
 .about-points {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* Space between the points */
+  flex-wrap: wrap; /* Allows points to wrap on smaller screens */
 }
 
+/* Point Container */
 .point {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
+  display: flex; /* Change to flex to align items horizontally */
+  flex-direction: column; /* Stack h4 and p vertically inside each point */
+  align-items: flex-start; /* Align items to the left */
+  gap: 5px; /* Space between h4 and p */
+  flex: 1; /* Make each point take equal width */
 }
 
+/* Icon */
 .point i {
   font-size: 1.5rem;
   color: #0a73c0;
   margin-top: 4px;
 }
 
-.point {
-  display: block; /* ensures block flow (h4 on top, p below) */
-}
-
+/* Heading (h4) */
 .point h4 {
   margin: 0;
   font-size: 1.1rem;
   color: #000;
+  display: block; /* Ensures it takes a new line */
 }
 
+/* Paragraph (p) */
 .point p {
   margin: 5px 0 0;
   font-size: 0.9rem;
   color: #666;
+  display: block; /* Ensures the p element is on a new line */
 }
+
 
 /* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 1024px) {
@@ -452,6 +498,7 @@ body, html {
 
   .about-content {
     flex-direction: column;
+    padding: 0 20px; /* Adjust padding for smaller screens */
   }
 
   .about-image, .about-text {

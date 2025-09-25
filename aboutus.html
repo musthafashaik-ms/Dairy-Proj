@@ -369,6 +369,24 @@
 </section>
 <!-- ===== Footer Placeholder (Load from footer.html) ===== -->
  <div id="footer-placeholder"></div>
+
+<!--To Move To Next Step-->
+ 
+ <script>
+  // Grab all steps
+  const steps = document.querySelectorAll(".step");
+ 
+  // Loop through each step
+  steps.forEach(step => {
+    step.addEventListener("click", () => {
+      // Remove highlight from all
+      steps.forEach(s => s.classList.remove("highlight"));
+      // Add to clicked one
+      step.classList.add("highlight");
+    });
+  });
+</script>
+
 </body>
 <script src="include.js"></script>
 </html>
