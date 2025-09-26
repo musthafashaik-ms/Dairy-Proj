@@ -299,8 +299,8 @@
 
 /* Badge */
 .badge {
-  width: 70px;
-  height: auto;
+  width: 150px;
+  height: 150px;
 }
 
 /* Heading */
@@ -515,10 +515,9 @@
   color: #999;
   margin-right: 6px;
 }
-
 .cart-btn {
   position: absolute;
-  bottom: 0px;
+  bottom: 0px;   /* Added a little spacing from the edges */
   right: 0px;
   width: 40px;
   height: 40px;
@@ -534,7 +533,7 @@
 }
 
 .cart-btn:hover {
-  background: #005bb5;
+  background: #f2f3f5;
 }
 
 /* === About Us Section === */
@@ -712,8 +711,8 @@
 
 .cart-btn {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
+  bottom: 0px;
+  right: 0px;
   background: #0077ff;
   color: #fff;
   border: none;
