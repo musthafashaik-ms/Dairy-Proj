@@ -307,11 +307,12 @@ body, html {
 /* Features Top */
 .features {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* Space between columns */
   margin-bottom: 50px;
 }
 
+/* Feature Card */
 .feature-card {
   background: #fff;
   padding: 20px;
@@ -319,18 +320,27 @@ body, html {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   display: flex;
-  flex-direction: column; /* Ensure vertical alignment */
-  align-items: center; /* Center the content horizontally */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Ensure space between content */
   gap: 10px; /* Space between icon, heading, and paragraph */
+  position: relative; /* Allow absolute positioning for arrow */
+}
+
+/* Feature Card Header (Icon + Heading) */
+.feature-header {
+  display: flex;
+  align-items: center; /* Align icon and heading vertically */
+  gap: 10px; /* Space between icon and heading */
+  transform: translateX(-10px); /* Move the icon + heading 10px to the left */
 }
 
 /* Feature Card Icon */
 .feature-card i {
   font-size: 2rem;
   color: #0a73c0;
-  margin-right: 0; /* No space between the icon and heading */
-  align-self: flex-start; /* Align icon to the left */
-  margin-top: 0; /* Remove any margin top */
+  margin: 0; /* Remove margin around icon */
+  padding: 0; /* Remove padding */
 }
 
 /* Heading (h3) */
@@ -340,16 +350,30 @@ body, html {
   display: inline-flex; /* Align icon and heading horizontally */
   align-items: center; /* Vertically center icon and heading */
   gap: 0; /* No gap between icon and heading */
-  margin-bottom: 5px; /* Optional: reduce space below heading */
-  margin-top: -45px; /* Optional: remove top margin if necessary */
+  margin: 0; /* Remove default margin */
 }
 
 /* Paragraph (p) */
 .feature-card p {
   font-size: 0.9rem;
   color: #666;
-  margin-top: 15px; /* Moves the paragraph up */
+  margin-top: 10px; /* Adjust space between paragraph and other elements */
 }
+
+/* Read More Arrow at Bottom-Right */
+.read-mores {
+  position: absolute;
+  bottom: 0px; /* Position 10px from the bottom of the card */
+  right: 0px; /* Position 10px from the right of the card */
+  font-size: 1.5rem;
+  color: #0a73c0; /* Arrow color - Blue */
+  background-color: rgb(255, 255, 255); /* Background color - White */
+  padding: 5px 10px; /* Optional: Add some padding around the arrow */
+  border-radius: 50%; /* Optional: Makes the background a circle around the arrow */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+
 
 
 
@@ -945,15 +969,15 @@ body, html {
 
 .quote-icon {
   position: absolute;
-  top: 16px;
+  top: 5px;
   right: 16px;
-  background-color: #009bdd; /* blue circle */
+  background-color: #f6f7f8; /* blue circle */
   color: white;
   width: 36px;
   height: 36px;
   border-radius: 100%;
   font-size: 24px;
-  line-height: 36px;
+  line-height: 55px;
   text-align: center;
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
