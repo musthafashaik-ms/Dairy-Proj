@@ -468,6 +468,11 @@ section.hero {
   color: #fff;
   text-decoration: none;
 }
+.read-more img {
+  width: 16px;   /* or 18px, depending on how small you want it */
+  height: 16px;
+  object-fit: contain;
+}
 
 .meta {
   display: flex;

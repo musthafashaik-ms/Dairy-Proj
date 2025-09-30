@@ -75,22 +75,22 @@
         <h5><a href="aboutus.html">About Us</a></h5>
     </div>
 </div>
-    </section>
+</section>
 
-     <section class="about-section">
-
-    
-
-    <!-- About Section -->
+<!-- About Section -->
 <section class="about">
+  <div class="about-image-wrapper">
   <div class="about-image">
     <img src="images/aboutimg.jpg" alt="Farmer with buffalo">
-    <div class="stats-card">
-      <h2>435+</h2>
-      <p>Growth Tons of Harvest</p>
-    </div>
   </div>
- 
+
+  <!-- Moved outside of .about-image -->
+  <div class="stats-card">
+    <h2>435+</h2>
+    <p>Growth Tons of Harvest</p>
+  </div>
+</div>
+
   <div class="about-text">
     <span class="tag">Who We Are</span>
     <h2>Currently we are growing and selling Buffalo Milk Products</h2>
@@ -99,26 +99,28 @@
       but the majority have suffered alteration in some form, by injected humour,
       or randomised words which don't look even.
     </p>
- 
+
     <div class="features">
       <div class="feature">
-        <div class="icon">🌱</div>
-        <div>
+        <div class="icon"><img src="images/nimag2.png" alt="icon"/>
+      
           <h3>Eco Farms Worldwide</h3>
           <p>There are many variations of passages of Lorem Ipsum available majority have suffered.</p>
+        
         </div>
       </div>
- 
+
       <div class="feature">
-        <div class="icon">⚙️</div>
+        <div class="icon"><img src="images/nimag2.png" alt="icon"/>
         <div>
           <h3>Special Equipment</h3>
           <p>There are many variations of passages of Lorem Ipsum available majority have suffered.</p>
         </div>
+        </div>
       </div>
     </div>
   </div>
-  </section>
+</section>
 
 <section class="scrolling-text">
   <div class="marquee">
@@ -257,7 +259,7 @@
     </div>
   </div>
 </section>
-  <div class="history-section">
+<div class="history-section">
   <span class="history-badge">🛈 Our History</span>
   <div class="history-header-row">
     <h2>Farming have been since<br>1866</h2>
@@ -294,11 +296,19 @@
 </div>
  
  
+ 
 <section class="farm-banner">
   <img src="images/cont.jpg" alt="Dairy Farm">
   <div class="banner-content">
-    <h2>We’re popular leader in Dairy Farm market</h2>
-    <a href="discover.html" class="discover-btn">Discover</a>
+    <div class="overlay"></div> <!-- overlay behind content -->
+    <div class="left-content">
+      <div class="icon-circle">
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <h2>We’re popular leader in <br> Dairy Farm market</h2></br></h2>
+    </div>
+    <a href="discover.html" class="discover-btn">Discover More 
+    <img src="images/black-arrow-rem.png" alt="arrow"></img></a>
   </div>
 </section>
 </div>
