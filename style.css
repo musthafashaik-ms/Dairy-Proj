@@ -12,7 +12,9 @@ body, html {
   color: white;
   background: #f4f4f4; /* Light background to see the curve effect */
 }
-
+.highlight span {
+  color: yellow;               /* Gray for the non-link text */
+}
 /* Hero Section with Clip-Path */
 .hero-section {
    --r: 20px;  /* smoother outer radius */

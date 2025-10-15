@@ -6,7 +6,7 @@
     <title>About Us</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome (latest CDN) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
   <div class="get-in-touch-wrapper">
@@ -31,7 +31,7 @@
                 <li><a href="products.html">Products</a></li>
                 <li><a href="nutrition.html">Nutrition</a></li>
                 <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
+          <div class="highlight"><li><a href="aboutus.html"><span>About Us</span></a></li></div> 
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
 
@@ -72,7 +72,9 @@
     <h1>About Us</h1>
     <div class="links">
         <h5><a href="home.html">Home ></a></h5>
+        <div class="highlight">
         <h5><a href="aboutus.html">About Us</a></h5>
+        </div>
     </div>
 </div>
 </section>
@@ -85,10 +87,10 @@
   </div>
 
   <!-- Moved outside of .about-image -->
-  <div class="stats-card">
-    <h2>435+</h2>
-    <p>Growth Tons of Harvest</p>
-  </div>
+  <div class="counter-box ">
+        <h2><span class="star">*</span>435+</h2>
+        <p>Growth Tons of Harvest</p>
+      </div>
 </div>
 
   <div class="about-text">
@@ -99,23 +101,25 @@
       but the majority have suffered alteration in some form, by injected humour,
       or randomised words which don't look even.
     </p>
-
+ 
     <div class="features">
       <div class="feature">
-        <div class="icon"><img src="images/nimag2.png" alt="icon"/>
-      
+        <div class="icon">
+          <img src="images/aboutR1.png" alt="Eco Farms Icon"/>
+        </div>
+        <div>
           <h3>Eco Farms Worldwide</h3>
-          <p>There are many variations of passages of Lorem Ipsum available majority have suffered.</p>
-        
+          <p>There are many variations of passages of Lorem Ipsum available, majority have suffered.</p>
         </div>
       </div>
-
+ 
       <div class="feature">
-        <div class="icon"><img src="images/nimag2.png" alt="icon"/>
+        <div class="icon">
+          <img src="images/aboutR2.png" alt="Special Equipment Icon"/>
+        </div>
         <div>
           <h3>Special Equipment</h3>
-          <p>There are many variations of passages of Lorem Ipsum available majority have suffered.</p>
-        </div>
+          <p>There are many variations of passages of Lorem Ipsum available, majority have suffered.</p>
         </div>
       </div>
     </div>
@@ -151,45 +155,55 @@
 <section class="products">
   <span class="tag">Who We Are</span>
   <h2>Our Best Products</h2>
- 
+
   <div class="products-container">
-    <div class="product-card">
-      <div class="circle">
-        <img src="images/curd.png" alt="Buffalo curd">
+    <div class="product-wrapper">
+      <div class="product-card">
+        <div class="circle">
+          <img src="images/curd.png" alt="Buffalo curd">
+        </div>
+        <button class="icon-btn" href="products.html"><img src="images/geticonp-removebg-preview.png" alt="arrow"></img></button>
+        <span class="category">Fertilizer</span>
+        <h3>Buffalo curd</h3>
       </div>
-      <button class="icon-btn">↗</button>
-      <span class="category">Fertilizer</span>
-      <h3>Buffalo curd</h3>
     </div>
- 
-    <div class="product-card">
-      <div class="circle">
-        <img src="images/ghee.png" alt="Buffalo Ghee">
+
+    <div class="product-wrapper">
+      <div class="product-card">
+        <div class="circle">
+          <img src="images/ghee.png" alt="Buffalo Ghee">
+        </div>
+        <button class="icon-btn">↗</button>
+        <span class="category">Fruits</span>
+        <h3>Buffalo Ghee</h3>
       </div>
-      <button class="icon-btn">↗</button>
-      <span class="category">Fruits</span>
-      <h3>Buffalo Ghee</h3>
     </div>
- 
-    <div class="product-card">
-      <div class="circle">
-        <img src="images/milk.png" alt="Buffalo Milk">
+
+    <div class="product-wrapper">
+      <div class="product-card">
+        <div class="circle">
+          <img src="images/milk.png" alt="Buffalo Milk">
+        </div>
+        <button class="icon-btn">↗</button>
+        <span class="category">Fertilizer</span>
+        <h3>Buffalo Milk</h3>
       </div>
-      <button class="icon-btn">↗</button>
-      <span class="category">Fertilizer</span>
-      <h3>Buffalo Milk</h3>
     </div>
- 
-    <div class="product-card">
-      <div class="circle">
-        <img src="images/paneer.png" alt="Paneer">
+
+    <div class="product-wrapper">
+      <div class="product-card">
+        <div class="circle">
+          <img src="images/paneer.png" alt="Paneer">
+        </div>
+        <button class="icon-btn">↗</button>
+        <span class="category">Fruits</span>
+        <h3>Paneer</h3>
       </div>
-      <button class="icon-btn">↗</button>
-      <span class="category">Fruits</span>
-      <h3>Paneer</h3>
     </div>
   </div>
 </section>
+
+
  
 <!-- Dots Section -->
 <div class="dots">
