@@ -21,12 +21,12 @@ body, html {
   --y: 25px;   /* small offset for balance */
  
   width: calc(100% - 28px); /* account for left+right margin */
-  height: 400px;
+  height: 350px;
   position: relative;
  
   margin: 10px; /* equal thin spacing on all sides */
  
-  background: url('images/blogbg.jpg') no-repeat center center/cover;
+  background: url('images/ChatGPT\ Image\ Oct\ 14\,\ 2025\,\ 04_46_42\ PM.png') no-repeat center center/cover;
   background-size: 100%; /* Zoom in the image */
   border-radius: var(--r);
  
