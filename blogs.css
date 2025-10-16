@@ -263,7 +263,6 @@ body, html {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 15;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -502,13 +501,24 @@ section.hero {
   color: var(--muted);
   font-size: 12px;
   margin: 10px 0;
+  align-items: center; /* Align text and image vertically */
 }
+
 .meta img {
   width: 14px;
   height: 14px;
-  vertical-align: middle;
   margin-right: 5px;
+  vertical-align: middle; /* Ensure the image aligns with the text */
 }
+
+.meta span {
+  display: flex;
+  align-items: center; /* Center the text and image */
+  line-height: 1.2; /* Adjust line height to move the text down a little */
+  padding-top: 2px; /* You can tweak this value to fine-tune the position */
+}
+
+
 .title {
   margin: 6px 0 18px 0; /* keep top and bottom margin, but no left/right margin */
   padding: 0; /* remove padding */
@@ -600,8 +610,8 @@ section.hero {
 .FTR-body {
   padding: 36px 0px;
   background: url('images/footerbg.png') no-repeat center bottom;
-   background-size: 100% auto;
-   background-color: white;
+  background-size: 100% auto;
+  background-color: white;
   --ftr-blue: #0078c8;
   --ftr-accent: #0b78c8;
   --ftr-text: #0b3b5a;
@@ -610,7 +620,9 @@ section.hero {
   color: var(--ftr-text);
   box-sizing: border-box;
   position: relative;
+  padding-left: 50px; /* Add left padding to move the footer right */
 }
+
 .FTR-body-grid {
   max-width: 1180px;
   margin: 0 auto;
@@ -620,7 +632,9 @@ section.hero {
   gap: 40px;
   align-items: start;
   box-sizing: border-box;
+  margin-left: 40px; /* Shift the entire grid to the right */
 }
+
  
 /* Column A: Brand */
 .FTR-col-brand { box-sizing: border-box; }
