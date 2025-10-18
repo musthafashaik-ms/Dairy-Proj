@@ -260,7 +260,7 @@ body, html {
  
 /* Get In Touch Button */
 .btn-outline {
-  padding: 10px 20px;
+  padding: 24px 18px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -269,38 +269,40 @@ body, html {
   font-weight: bold;
   transition: background 0.3s ease;
 }
-
+ 
 .btn-outline:hover {
   background-color: #0056b3;
 }
-
 .get-in-touch {
   position: absolute;
-  overflow: visible;
-  top: 25px;
+  top: 20px;
   right: 20px;
   background: #2471ff;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 45px;
-  font-weight: bold;
+  padding: 18px 28px;        /* ⬅️ Increased vertical and horizontal padding */
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;           /* slightly larger for balance */
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;                 /* spacing between icon & text */
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 999;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
 }
-
+ 
 .get-in-touch:hover {
   background: #0d5adf;
-  transform: translateX(-3px);
+  transform: translateX(-2px);
 }
-
+ 
 .get-in-touch img {
-  width: 16px;
+  width: 16px;               /* match bigger button */
   height: 16px;
+  object-fit: contain;
 }
 
 
@@ -1264,6 +1266,8 @@ width: 450px;
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 14px;
+  margin-left: -30px; /* moves closer to the left */
+
 }
  
 .section-tag .tag-icon {
@@ -1282,8 +1286,9 @@ width: 450px;
 .testimonial-cards {
   display: flex;
   justify-content: flex-start;
-  gap: -50px;
+  gap: 30px; /* or 40px or whatever spacing looks right */
 }
+
 
 /* Wrapper allows quote icon to sit outside card */
 .testimonial-wrapper {
@@ -1396,27 +1401,31 @@ width: 450px;
   display: block;
 }
 
-
 .testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px 20px 40px; /* matches left/right padding */
+  padding: 0 40px 20px 40px;
   margin-bottom: 30px;
+  margin-left: -70px;
+  /* margin-left removed to avoid shifting */
 }
 
 .testimonial-nav {
   display: flex;
-  gap: 10px; /* space between buttons */
+  gap: 10px;
+  padding-right: 30px;
 }
+
+
 .nav-btn {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #181717;
   border-radius: 8px;
-  width: 34px;
+  width: 40px;
   height: 34px;
   font-size: 1.2rem;
-  color: #009bdd;
+  color: #141414;
   cursor: pointer;
 }
 
