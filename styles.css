@@ -121,8 +121,8 @@ body, html {
   align-items: center;
   gap: 16px;
   font-family: Arial, sans-serif;
-  margin-left: 300px;
-  margin-top: -32px;
+  margin-left: 250px;
+  margin-top: -15px;
 }
 
 /* Links inside nav-contact */
@@ -155,7 +155,7 @@ body, html {
   align-items: center;
   transition: background 0.3s ease;
   margin-left: 15px;
-  margin-top: -5px;
+  margin-top: 10px;
 }
 
 .btn-search:hover {
@@ -168,47 +168,73 @@ body, html {
   height: 18px;
 }
 .search-wrapper {
-  position: relative;
+  position: relative; /* makes popup follow this container */
   display: inline-block;
 }
-
+ 
+/* Search Button */
+.btn-search {
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+ 
+.btn-search:hover {
+  background-color: #eaeaea;
+}
+ 
 .search-popup {
   position: absolute;
-  top: 75px; /* Pushes the popup below the button */
-  right: 70px; /* Adjusts the popup to the left */
+  top: calc(100% + 20px); /* moved further down */
+  left: 60%;
+  transform: translateX(-50%);
   background-color: white;
-  padding: 10px;
-  border: 2px solid #007bff; /* Blue border */
+  border: 2px solid #007bff;
   border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px;
+  display: none; /* hidden initially */
   z-index: 1000;
 }
 
-/* Triangle Arrow */
+.search-popup form {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between input and button */
+}
+ 
+ 
+/* Popup arrow */
 .search-popup::before {
   content: "";
   position: absolute;
-  top: -10px; /* Positions the arrow above the popup */
-  left: 50%; /* Centers the arrow horizontally */
-  transform: translateX(-50%); /* Adjusts for exact centering */
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
   border-width: 0 10px 10px 10px;
   border-style: solid;
-  border-color: transparent transparent #007bff transparent; /* Blue arrow */
+  border-color: transparent transparent #007bff transparent;
 }
-
-/* Inner triangle to create a layered arrow effect */
+ 
 .search-popup::after {
   content: "";
   position: absolute;
-  top: -8px; /* Slightly lower than the ::before arrow */
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 9px 9px 9px;
   border-style: solid;
-  border-color: transparent transparent white transparent; /* White inner triangle */
+  border-color: transparent transparent white transparent;
 }
-
+ 
+/* Input + Button */
 .search-popup input[type="text"] {
   padding: 8px;
   width: 200px;
@@ -218,7 +244,7 @@ body, html {
   font-size: 14px;
   color: #000;
 }
-
+ 
 .search-popup button {
   background-color: #007bff;
   color: white;
@@ -226,13 +252,12 @@ body, html {
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
 }
-
+ 
 .search-popup button:hover {
   background-color: #0056b3;
 }
-
+ 
 /* Get In Touch Button */
 .btn-outline {
   padding: 10px 20px;
@@ -318,7 +343,6 @@ body, html {
     text-decoration: none;  /* Add underline on hover */
 }
 
-/* -------------------- About Section -------------------- */
 /* About Section */
 .about {
   display: flex;
@@ -330,7 +354,7 @@ body, html {
   margin-top: 70px; /* 👈 Moves the section upwards */
   margin-bottom: 5px;
 }
-
+ 
 /* Wrapper for image + nutrition box */
 .about-image-wrapper {
   position: relative;
@@ -344,16 +368,16 @@ width: 450px;
   border-radius: 20px;
   position: relative; /* 👈 make sure it’s positioned */
   overflow: visible;  /* 👈 allow content like .stats-card to overflow */
-
+ 
   --r: 15px;
   --s: 10px;
   --x: 160px;
   --y: 120px;
-
+ 
   --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
   --_g:conic-gradient(from 90deg at calc(100% - var(--r)) calc(100% - var(--r)), #0000 25%, #000 0);
   --_d:(var(--s) + var(--r));
-
+ 
   mask:
     calc(100% - var(--_d) - var(--x)) 100% var(--_m),
     100% calc(100% - var(--_d) - var(--y)) var(--_m),
@@ -361,75 +385,114 @@ width: 450px;
       calc(-1 * var(--r) - var(--x)) calc(-1 * var(--r) - var(--y)),
     var(--_g) calc(-1 * var(--_d) - var(--x)) 0,
     var(--_g) 0 calc(-1 * var(--_d) - var(--y));
-
+ 
   mask-repeat: no-repeat;
 }
-
+ 
 /* Image inside curved box */
+.about {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Space between left and right part */
+  padding: 0px 170px; /* Padding to control space on both sides */
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 70px;
+  margin-bottom: 5px;
+}
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 10px;
 }
-
+ 
 .counter-box {
   position: absolute;
-  margin-top: -29%;
-  margin-left: 63%;
+  margin-top: -29%; /* Adjust as needed */
+  margin-left: 63%; /* Adjust as needed */
   background: #fcd34d;
   color: #fff;
-  padding: 35px 15px;
+  padding: 20px 20px;
   border-radius: 15px;
-  text-align: center;
+  text-align: left; /* Left-align everything inside the counter box */
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
   min-width: 160px;
+  font-family: Arial, sans-serif;
+  display: inline-flex; /* Align everything on the same line */
+  align-items: center; /* Align items vertically */
+  flex-direction: column; /* Stack items vertically */
 }
-
+ 
 .counter-box h2 {
-  font-size: 30px;
+  font-size: 35px; /* Larger font size */
   margin-bottom: 8px;
   font-weight: bold;
   color: #000;
+  display: inline-flex; /* Align the elements inline */
+  align-items: baseline; /* Align items to the baseline */
+  white-space: nowrap; /* Prevent wrapping of elements */
+  margin-right: 10px; /* Space between number and description text */
 }
-
+ 
 .counter-box .star {
-  color: #1d640d;
+  color: #1d640d; /* Green color for the star */
   font-weight: bold;
+  font-size: 40px; /* Make the star a bit larger */
+  margin: 0; /* Ensure no extra margin */
 }
-
+ 
+.counter-box .number {
+  font-size: 40px; /* Make the number the same size as the star */
+  font-weight: bold;
+  color: #2c3e2b;
+  margin: 0; /* No margin, ensuring no gap */
+}
+ 
+.counter-box .plus {
+  font-size: 40px; /* Same size as the number */
+  font-weight: bold;
+  margin-left: 5px; /* Space between number and plus */
+  margin-top: -18px; /* Move the + slightly more up */
+  color: #2c3e2b;
+}
+ 
+.counter-box .line {
+  width: 100%; /* Full width line */
+  border-top: 0.1px solid #2c3e2b;/* Thinner black line */
+  margin: 10px 0; /* Space around the line */
+}
+ 
+ 
 .counter-box p {
   font-size: 12px;
-  color: rgb(10, 10, 10);
-  margin-top: -5px; /* Adjusts the position a little upwards */
+  color: #2c3e2b; /* Dark gray for the text */
+  margin: 0; /* Remove default margin from paragraph */
 }
-
-.counter-box span {
-  display: inline-block;
-  margin-top: -25px; /* Moves the span upwards slightly */
-}
-
-/* If 435+ is inside a specific element like a span or p, adjust accordingly */
-.counter-box .number {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: -25px; /* Move the "435+" text up */
-}
-
+ 
+ 
 /* Right Text */
 .about-text {
   flex: 1;
 }
  
+/* Style the tag container */
 .about-text .tag {
   font-size: 0.85rem;
   font-weight: bold;
-  background: #eef6e9;
+  background: white;
   color: #2c5e2e;
-  padding: 5px 12px;
+  padding: 0px 12px;
   border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
 }
- 
+.about-text .tag .tag-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+  margin-right: 8px; /* Add space between image and text */
+}
+  
 .about-text h2 {
   font-size: 1.8rem;
   margin: 15px 0;
@@ -502,11 +565,6 @@ width: 450px;
     padding: 15px 20px;
   }
 }
- 
-
-
-
-
 /* -------------------- SCROLL TEXT -------------------- */
 
 .scrolling-text {
@@ -545,62 +603,67 @@ width: 450px;
   100% { transform: translateX(-50%); } /* Only half since we have 2 copies */
 }
 /* Products Section */
-.products {
-  text-align: center;
-  padding: 60px 40px;
-  background: #fafaf5;  /* light background like design */
+.products-section2 {
+  padding: 60px 20px;
 }
-
-.products .tag {
+ 
+.section-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+ 
+.tag2 {
   font-size: 0.85rem;
   font-weight: bold;
-  background: #eef6e9;
+  background: white;
   color: #2c5e2e;
-  padding: 5px 12px;
-  border-radius: 20px;
+  padding: 2px 8px;         /* Adjust pill padding */
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.products h2 {
-  font-size: 2rem;
-  margin: 20px 0 40px;
-  color: #2c2c2c;
+.tag2-icon {
+  width: 16px;              /* Set icon width */
+  height: 16px;             /* Set icon height */
+  margin-right: 6px;        /* Space between icon and text */
+  object-fit: contain;      /* Maintain aspect ratio */
 }
 
-/* Product Cards Container */
-.products-container {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px;
+.section-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2d3e32;
+  margin-top: 10px;
+  margin-left: 10px;
 }
-
-/* Each Product Wrapper */
-.product-wrapper {
-   position: relative;
-  overflow: visible;
-}
-
-/* Product Card */
-.product-card {
-  position: relative;
-  background: #eff3f3;
-  border-radius: 20px;
-  padding: 20px;
-  width: 250px;
-  aspect-ratio: 1;
-  text-align: center;
-  transition: transform 0.3s ease;
-  overflow: visible; /* Good */
-  z-index: 1;
- --r: 20px; /* the radius */
-  --s: 30px; /* size of inner curve */
-  --x: 20px; /* horizontal offset (no percentage) */
-  --y: 10px; /* vertical offset (no percentage) */
  
+.products-container2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 6%;
+}
+.product-card {
+  background: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+ 
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Needed for curve cut */
+  --r: 20px;
+  --s: 30px;
+  --x: 15px;
+  --y: 15px;
+
   width: 250px;
+  height:290px;
   aspect-ratio: 1;
-  background: #e3e4e4;
+ 
   border-radius: var(--r);
   --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
   --_g:conic-gradient(at calc(100% - var(--r)) var(--r),#0000 25%,#000 0);
@@ -613,136 +676,127 @@ width: 450px;
     var(--_g) calc(-1*var(--_d) - var(--x)) 0,
     var(--_g) 0 calc(var(--_d) + var(--y));
   mask-repeat: no-repeat;
-  }
-
-
-/* Circle Image Holder */
-.product-card .circle {
-  width: 150px;
-  height: 150px;
-  border: 2px solid #3cb371;
+ 
+}
+ 
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;   /* make curve slightly larger */
+  height: 70px;
+  background: #f5f5f5; /* match section background */
+  border-bottom-left-radius: 70px;
+  z-index: 1;
+}
+ 
+/* Arrow button placed inside curve */
+.arrow-btn {
+  position:absolute;
+ margin-left:-47%;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  background: #0077b6;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 15px;
-  overflow: hidden;
-}
-
-.product-card .circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-/* Slight zoom on hover */
-.product-card:hover .circle img {
-  transform: scale(1.05);
-}
-
-.icon-btns {
-   position: relative;
-  top: -200px;    /* outside above */
-  right: -20px;  /* outside right */
-  width: 35px;
-  height: 35px;
-  background: #2c7ae0;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  z-index: 20; /* higher than product card */
-  cursor: pointer;
-  transition: background 0.3s ease;
-  text-decoration: none; /* for links */
-
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
-.icon-btns:hover {
-  background: #1d5cad;
-}
-
-.icon-btns img {
+.arrow-btn img {
   width: 18px;
   height: 18px;
   object-fit: contain;
-  pointer-events: none; /* prevent accidental drag */
+  pointer-events: none;
 }
-
-
-/* Circle image container */
-.product-card .circle {
-  width: 150px;
-  height: 150px;
-  border: 2px solid #3cb371;
+.arrow-btn2 {
+  position:absolute;
+ margin-right:7%;
+ 
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  background: #0077b6;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 15px;
-  overflow: hidden;
-}
-
-.product-card .circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
-}
-
-/* Category */
-.product-card .category {
-  display: flex;
   align-items: center;
-  font-size: 0.8rem;
-  color: #3a9d48;
-  margin-bottom: 5px;
-  padding-left: 75px;
-}
-
-.product-card .category::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #e0d14a;
-  margin-right: 8px;
-}
-
-.product-card h3 {
-  font-size: 1rem;
-  color: #222;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;  /* centers horizontally */
-  align-items: center;
-  margin-top: 10px;   /* small space from products */
-  margin-bottom: 40px; /* bigger space before process */
-  gap: 12px;       /* spacing between dots */
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
  
-.dots {
+.arrow-btn2 img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.arrow-btn3 {
+  position:absolute;
+ margin-left:33%;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #0077b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+ .arrow-btn3 img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.arrow-btn4 {
+  position:absolute;
+ margin-left:73%;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #0077b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+ 
+.arrow-btn4 img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;           /* space between dots */
+  margin-top: 20px;    /* spacing above the dots */
+}
+
+.dott {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background-color: lab(9.1% -16.09 9.62 / 0.774); /* dark green dots */
-  opacity: 0.6;              /* lighter look */
-  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.3); /* default: semi-transparent dark */
+  opacity: 0.6;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
- 
-.dots.active {
-  background-color: #e0d14a; /* yellow active dot */
+
+.dott.active {
+  background-color: #e0ce2a; /* bright yellow for active */
   opacity: 1;
 }
+
 
 /* -------------------- Process -------------------- */
 /* -------------------- Process -------------------- */
@@ -753,14 +807,23 @@ width: 450px;
 }
  
 .process .tag {
-  display: inline-block;
+  display: inline-flex; /* Change to inline-flex for aligning the image and text */
   background: #fff;
   color: #006bb3;
   padding: 6px 15px;
   border-radius: 20px;
   font-size: 14px;
   margin-bottom: 20px;
+  align-items: center; /* Vertically center the image and text */
 }
+ 
+/* Style the image inside the tag */
+.process .tag .tag-icon {
+  width: 18px; /* Adjust the icon size */
+  height: 18px; /* Adjust the icon size */
+  margin-right: 8px; /* Add space between the image and the text */
+}
+ 
  
 .process-content {
   display: flex;
@@ -802,14 +865,16 @@ width: 450px;
  
 .process-image .chat-icon {
   position: absolute;
-  bottom: -20px;
-  right: -20px;
+  bottom: 0px;
+  right: 0px;
   background: #ffeb3b;
-  color: black;
   padding: 12px;
-  border-radius: 10px;
-  font-size: 20px;
+  border-radius: 15px;
+  font-size: 20px; /* This won't affect the image, but it's there if you want to apply text-based styles */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 90px; /* Adjust based on the size of your image */
+  height: 70px; /* Adjust based on the size of your image */
+  object-fit: cover; /* Ensures the image fits inside the given width and height */
 }
  
 .process-right {
@@ -834,18 +899,7 @@ width: 450px;
   margin-bottom: 25px;
 }
  
-/* Divider line under each step except last */
-.step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.4);
-}
- 
-/* Step Number */
+ /* Step Number */
 .step-number {
   font-size: 26px;
   font-weight: bold;
@@ -934,31 +988,36 @@ width: 450px;
 }
 
 
- 
 .history-section {
-  margin: 25px 100px 24px 100px; 
+  margin: 25px 100px;
   box-sizing: border-box;
 }
  
 .history-badge {
-  background: #e5f1fe;
-  color: #1878d7;
+  background: white;
+  color: #2c3e2b;
   padding: 7px 14px;
   border-radius: 16px;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 13px;
-  display: inline-block;
+  display: inline-flex;   /* Use flex to align image + text */
+  align-items: center;    /* Vertically center */
+  gap: 8px;               /* Space between image and text */
 }
  
+.history-badge .badge-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
 .history-header-row {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin: 25px 66px 24px 25px; /* uniform left and right margin */
+  margin: 25px 66px 24px 25px;
   gap: 15px;
 }
-
  
 .history-header-row h2 {
   color: #1878d7;
@@ -973,61 +1032,86 @@ width: 450px;
   color: #6d6d6d;
   margin: 0;
   max-width: 500px;
-  opacity: 0.90;
+  opacity: 0.9;
 }
  
+/* ✅ Horizontal timeline layout */
+/* ✅ Horizontal timeline layout */
 .history-timeline {
   display: flex;
-  
-  border-radius: 15px;
-  padding: 32px 0 20px 0;
-  margin: 0 36px 38px 36px;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  padding: 50px 0 20px 0;
+  margin: 0 36px 38px 34px;
+  gap: 40px;
 }
  
+/* ✅ Horizontal green line */
+.history-timeline::before {
+  content: "";
+  position: absolute;
+  top: 146px; /* aligns line with all dots */
+  left: -130px;
+  width: 125%;
+  height: 0.5px;
+  background-color: #ccc;
+  z-index: 0;
+}
+ 
+/* Each timeline column */
 .history-year-col {
-  flex: 1 1 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: flex-start;
+  align-items: start; /* centers each column */
+  text-align: start;
+  position: relative;
+  z-index: 1;
 }
  
+/* Year */
 .year {
-   font-size: 40px;
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 600;
   color: transparent;
-  -webkit-text-stroke: 1.5px #999;
-  margin-bottom: 10px;
+  -webkit-text-stroke: 1px #666;
+  margin-bottom: 35px; /* pushes dot to align perfectly */
   letter-spacing: 1px;
 }
  
-.dot {
-  width: 10px;
-  height: 10px;
-  background: #36b37e;
+/* Dot */
+.doot {
+  width: 12px;
+  height: 12px;
+  background: green;
+  align-items: start; /* centers each column */
   border-radius: 50%;
-  margin: 8px 0 19px 0;
+  position: relative;
+  top: 0;
+  margin-bottom: 35px; /* space below dot before title */
+  z-index: 1;
+  border: 1px solid #fff;
 }
  
+/* Title & description */
 .milestone-title {
+  align-items: start; /* centers each column */
   font-size: 1.08rem;
   color: #1878d7;
   font-weight: 700;
   margin-bottom: 7px;
-  text-align: start;
 }
  
 .milestone-desc {
+ 
   font-size: 0.97rem;
   color: #535353;
-  opacity: 0.80;
-  text-align: start;
-  margin-bottom: 6px;
+  opacity: 0.9;
+  max-width: 250px;
   line-height: 1.48;
-  max-width: 300px;
 }
+ 
  
 
 
@@ -1082,19 +1166,21 @@ width: 450px;
   position: relative;
 }
 
-.icon-circle {
-  background-color: #0a73c0;
+.icon-circles {
+  background-color: #f6f8fa;
   width: 50px;
   height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden; /* Ensure image stays within the circle */
 }
-
-.icon-circle i {
-  color: #fff;
-  font-size: 1.5rem;
+ 
+.icon-circles img {
+  width: 160%;       /* Scale image within the circle */
+  height: 160%;
+  object-fit: contain; /* Keeps the image aspect ratio */
 }
 
 .left-content h2 {
@@ -1155,16 +1241,22 @@ width: 450px;
 /* Testimonial Section */
 /* ------------------- */
 
-.testimonial-section {
+.testimonial-sections {
   background: #f9f9f3;
   padding: 60px 10%;
   font-family: "Poppins", sans-serif;
   color: #1a3c1a;
 }
 
-/* Tag */
+.testimonial-section {
+  justify-content: left;
+  background: #f8f8f2;
+  padding: 40px 20px 20px 40px; /* adds 40px left padding */
+  
+}
 .section-tag {
-  display: inline-block;
+  display: inline-flex; /* So text and image align nicely */
+  align-items: center;
   background: #fff;
   border: 1px solid #e0e0d9;
   padding: 6px 14px;
@@ -1173,110 +1265,161 @@ width: 450px;
   font-weight: 600;
   margin-bottom: 14px;
 }
-
-/* Title */
-.section-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  color: #2a2a2a;
+ 
+.section-tag .tag-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 }
 
-/* Header with nav */
+.testimonial-section h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: #222;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: flex-start;
+  gap: -50px;
+}
+
+/* Wrapper allows quote icon to sit outside card */
+.testimonial-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 120px; /* ✅ This moves the whole card (and icon) to the right */
+}
+
+/* ❝ Quote icon styling */
+.quote-icon {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  width: 46px;
+  height: 46px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure image doesn't overflow the circle */
+}
+
+/* Image inside the quote icon */
+.quote-icon img {
+  width: 152%;
+  height: 152%;
+  object-fit: contain;
+  margin-bottom: -6px;
+  margin-left: -6px;
+}
+
+
+/* Card with custom top-right curve */
+.testimonial-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 2px 16px 0 rgba(80, 80, 80, 0.08);
+  padding: 28px 24px 20px 24px;
+  width: 350px;
+  height: 300px;
+  aspect-ratio: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: -120px; /* Adjust the value as needed */
+  /* Custom curved corner using mask */
+  --r: 20px;
+  --s: 30px;
+  --x: 20px;
+  --y: 5px;
+  --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
+  --_g: conic-gradient(at calc(100% - var(--r)) var(--r), #0000 25%, #000 0);
+  --_d: (var(--s) + var(--r));
+  mask:
+    calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+    100% calc(var(--_d) + var(--y)) var(--_m),
+    radial-gradient(var(--s) at 100% 0, #0000 99%, #000 calc(100% + 1px))
+    calc(-1 * var(--r) - var(--x)) calc(var(--r) + var(--y)),
+    var(--_g) calc(-1 * var(--_d) - var(--x)) 0,
+    var(--_g) 0 calc(var(--_d) + var(--y));
+  mask-repeat: no-repeat;
+}
+
+/* Star rating */
+.stars {
+  color: #ffcb05;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+/* Testimonial text */
+.testimonial-card p {
+  margin: 20px 0 14px 0;
+  color: black;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Profile section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0c0202;
+  display: block;
+}
+
+.profile-role {
+  font-size: 0.83rem;
+  color: #0f0202;
+  display: block;
+}
+
+
 .testimonial-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px 20px 40px; /* matches left/right padding */
+  margin-bottom: 30px;
 }
 
-/* Cards wrapper */
-.testimonial-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; /* ✅ reduced gap here too */
-  margin-top: 30px;
-}
-
-/* Card */
-.testimonial-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  position: relative;
-  text-align: left;
-}
-
-/* Quote icon */
-.testimonial-card .quote-icon {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  font-size: 46px;
-  color: #014211;
-  opacity: 0.15;
-}
-
-/* Stars */
-.stars {
-  color: #f4b400;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-
-/* Text */
-.testimonial-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 20px;
-}
-
-/* Author */
-.author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.author img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #f9f9f3;
-}
-.author h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-.author span {
-  font-size: 12px;
-  color: #777;
-}
-
-/* Nav buttons */
 .testimonial-nav {
   display: flex;
-  gap: 10px;
+  gap: 10px; /* space between buttons */
 }
 .nav-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
   background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  color: #009bdd;
   cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.2s ease;
 }
-.nav-btn:hover {
-  background: #f1f1f1;
-}
+
 /* Footer section*/
 .top-bar {
   background: #067ec4;
@@ -1338,13 +1481,40 @@ width: 450px;
   align-items: center;
   font-size: 14px;
 }
- 
+ .circle {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+  border: 2px solid #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.circle img {
+  width: 100%;
+  height: auto;
+}
+.category {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0 4px;
+}
+.product-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #2d3e32;
+}
+
+
 /* Outer body / 2-column grid */
 .FTR-body {
-  padding: 36px 0px;
+  padding: 36px 0;
   background: url('images/footerbg.png') no-repeat center bottom;
-   background-size: 100% auto;
-   background-color: white;
+   background-size:  100% auto;
+  background-color: white;
   --ftr-blue: #0078c8;
   --ftr-accent: #0b78c8;
   --ftr-text: #0b3b5a;
@@ -1353,6 +1523,7 @@ width: 450px;
   color: var(--ftr-text);
   box-sizing: border-box;
   position: relative;
+  
 }
 .FTR-body-grid {
   max-width: 1180px;
@@ -1515,8 +1686,7 @@ width: 450px;
   .FTR-headline { font-size:22px; }
   .FTR-bottom { flex-direction:column; align-items:flex-start; gap:8px; padding-top:12px; }
 }
- 
-/* Back to Top Button */
+  /* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -1542,14 +1712,11 @@ width: 450px;
   line-height: 1;
   padding: 0;
 }
- 
+
 .back-to-top:hover {
   background: #005a94;
 }
- 
+
 .back-to-top:focus {
   outline: none;
 }
- 
- 
- 

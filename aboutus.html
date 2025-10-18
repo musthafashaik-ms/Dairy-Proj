@@ -39,26 +39,24 @@
 <div class="nav-contact">
   <!-- Call Us Now -->
   <a href="tel:+910123456789">
-    <i class="fa fa-phone" aria-hidden="true"></i>
+    <img src="images/cell.png">
     <span>
       Call us Now<br>
       +91 01234 56789
     </span>
   </a>
-
-  <!-- Wrapper to anchor popup relative to the button -->
 <div class="search-wrapper">
-      <!-- Search Button -->
-      <button class="btn-search" aria-label="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Search Popup -->
+  <!-- Search Button -->
+  <button class="btn-search" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+         stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+ 
+  <!-- Search Popup (✅ moved inside) -->
   <div class="search-popup" id="searchPopup">
     <form id="searchForm">
       <input type="text" placeholder="Type to search..." />
@@ -66,7 +64,6 @@
     </form>
   </div>
 </div>
-
   
         <div class="hero-content">
     <h1>About Us</h1>
@@ -85,16 +82,21 @@
   <div class="about-image">
     <img src="images/aboutimg.jpg" alt="Farmer with buffalo">
   </div>
-
+ 
   <!-- Moved outside of .about-image -->
-  <div class="counter-box ">
-        <h2><span class="star">*</span>435+</h2>
-        <p>Growth Tons of Harvest</p>
-      </div>
+  <div class="counter-box">
+  <h2><span class="star">*</span><span class="number">435</span><span class="plus">+</span></h2>
+  <div class="line"></div> <!-- Added line div -->
+  <p>Growth Tons of Harvest</p>
 </div>
-
+</div>
+ 
   <div class="about-text">
-    <span class="tag">Who We Are</span>
+    <span class="tag">
+  <img src="images/mini.jpg" alt="Icon" class="tag-icon">
+  Who We Are
+</span>
+ 
     <h2>Currently we are growing and selling Buffalo Milk Products</h2>
     <p>
       There are many variations of passages of Lorem Ipsum available,
@@ -105,7 +107,7 @@
     <div class="features">
       <div class="feature">
         <div class="icon">
-          <img src="images/aboutR1.png" alt="Eco Farms Icon"/>
+          <img src="images/aboutf11.png" alt="Eco Farms Icon"/>
         </div>
         <div>
           <h3>Eco Farms Worldwide</h3>
@@ -152,79 +154,87 @@
 
 
 
-<section class="products">
-  <span class="tag">Who We Are</span>
-  <h2>Our Best Products</h2>
-
-  <div class="products-container">
-    <div class="product-wrapper">
-      <div class="product-card">
-        <div class="circle">
-          <img src="images/curd.png" alt="Buffalo curd">
-        </div>
-        <a class="icon-btns" href="products.html">
-  <img src="images/geticonp-removebg-preview.png" alt="arrow" />
-</a>
-
-        <span class="category">Fertilizer</span>
-        <h3>Buffalo curd</h3>
-      </div>
+<section class="products-section2">
+    <div class="section-header">
+     <span class="tag2">
+  <img src="images/mini.jpg" alt="Icon" class="tag-icon">
+  Who We Are
+</span>
+      <h2>Our Best Products</h2>
     </div>
-
-    <div class="product-wrapper">
+ 
+    <div class="products-container2">
+     
+      <!-- Product 1 -->
       <div class="product-card">
+       
+        <div class="circle">
+          <img src="images/curd.png" alt="Buffalo Curd">
+        </div>
+        <p class="category">• Fertilizer</p>
+        <h3>Buffalo Curd</h3>
+      </div>
+     <a class="arrow-btn" href="products.html">
+        <img src="images/geticonp-removebg-preview.png" alt="arrow">
+     </a>
+ 
+      <!-- Product 2 -->
+      <div class="product-card">
+       
         <div class="circle">
           <img src="images/ghee.png" alt="Buffalo Ghee">
         </div>
-<a class="icon-btns" href="products.html">
-  <img src="images/geticonp-removebg-preview.png" alt="arrow" />
-</a>
-        <span class="category">Fruits</span>
+        <p class="category">• Fruits</p>
         <h3>Buffalo Ghee</h3>
       </div>
-    </div>
-
-    <div class="product-wrapper">
+      <a class="arrow-btn2" href="products.html">
+  <img src="images/geticonp-removebg-preview.png" alt="arrow">
+</a>
+ 
+      <!-- Product 3 -->
       <div class="product-card">
+       
         <div class="circle">
           <img src="images/milk.png" alt="Buffalo Milk">
         </div>
-<a class="icon-btns" href="products.html">
-  <img src="images/geticonp-removebg-preview.png" alt="arrow" />
-</a>
-        <span class="category">Fertilizer</span>
+        <p class="category">• Fertilizer</p>
         <h3>Buffalo Milk</h3>
       </div>
-    </div>
-
-    <div class="product-wrapper">
+       <a class="arrow-btn3" href="products.html">
+  <img src="images/geticonp-removebg-preview.png" alt="arrow">
+</a>
+ 
+      <!-- Product 4 -->
       <div class="product-card">
-        <div class="circle">
+       <div class="circle">
           <img src="images/paneer.png" alt="Paneer">
         </div>
-<a class="icon-btns" href="products.html">
-  <img src="images/geticonp-removebg-preview.png" alt="arrow" />
-</a>
-        <span class="category">Fruits</span>
+        <p class="category">• Fruits</p>
         <h3>Paneer</h3>
       </div>
-    </div>
-  </div>
-</section>
-
-
+       <a class="arrow-btn4" href="products.html">
+  <img src="images/geticonp-removebg-preview.png" alt="arrow">
+</a>
  
-<!-- Dots Section -->
-<div class="dots">
-  <span class="dots active"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-  <span class="dots"></span>
-</div>
+    </div>
+ 
+    <!-- Carousel dots -->
+    <div class="carousel-dots">
+      <span class="dott active"></span>
+      <span class="dott"></span>
+      <span class="dott"></span>
+      <span class="dott"></span>
+    </div>
+  </section>
+
+
+
 
 <section class="process">
-  <span class="tag">Get To Know Us</span>
+ <span class="tag">
+  <img src="images/mini.jpg" alt="Icon" class="tag-icon">
+  Get To Know Us
+</span>
   <div class="process-content">
    
     <!-- Left Side (Text + Image) -->
@@ -232,7 +242,9 @@
       <h2>Buffalo Milk Producing &<br>Cleaning Process</h2>
       <div class="process-image">
         <img src="images/clean process.jpg" alt="Milk Process">
-        <div class="chat-icon">💬</div>
+        <div class="process-image">
+  <img src="images/clean process.png" alt="Chat Icon" class="chat-icon">
+</div>
       </div>
     </div>
  
@@ -283,35 +295,44 @@
   </div>
 </section>
 <div class="history-section">
-  <span class="history-badge">🛈 Our History</span>
+   <span class="history-badge">
+  <img src="images/mini.jpg" alt="History Icon" class="badge-icon">
+  Our History
+</span>
+ 
   <div class="history-header-row">
     <h2>Farming have been since<br>1866</h2>
     <p>
       There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even.
     </p>
   </div>
+ 
+  <!-- ✅ Timeline container -->
   <div class="history-timeline">
     <div class="history-year-col">
       <div class="year">1987</div>
-      <div class="dot"></div>
+      <div class="doot"></div>
       <div class="milestone-title">Open my Farm</div>
       <div class="milestone-desc">Corrupti et consequatur magni minus! Iusto eos consectetur similique minus culpa odio temporibus.</div>
     </div>
+ 
     <div class="history-year-col">
       <div class="year">1995</div>
-      <div class="dot"></div>
+      <div class="doot"></div>
       <div class="milestone-title">Farm Remodelacion</div>
       <div class="milestone-desc">Majority have suffered alteration in some form by injected humor culpa odio temporibus.</div>
     </div>
+ 
     <div class="history-year-col">
       <div class="year">2000</div>
-      <div class="dot"></div>
+      <div class="doot"></div>
       <div class="milestone-title">Grainfarmers Formed</div>
       <div class="milestone-desc">Always parties but trying the shewing of mention minus Vial ratione his corporis veritatis odi.</div>
     </div>
+ 
     <div class="history-year-col">
       <div class="year">1910</div>
-      <div class="dot"></div>
+      <div class="doot"></div>
       <div class="milestone-title">Start of Dairy Farm</div>
       <div class="milestone-desc">Consequatur magni Corrupti et minus! Iusto eos consectetur similique minus culpa odio temporibus.</div>
     </div>
@@ -325,8 +346,8 @@
   <div class="banner-content">
     <div class="overlay"></div> <!-- overlay behind content -->
     <div class="left-content">
-      <div class="icon-circle">
-        <i class="fa-solid fa-handshake"></i>
+      <div class="icon-circles">
+        <img src="images/framicon.png" alt="Handshake Icon">
       </div>
       <h2>We’re popular leader in <br> Dairy Farm market</h2></br></h2>
     </div>
@@ -337,68 +358,88 @@
 </div>
 
 <!-- Testimonials -->
-  <section class="testimonial-section">
-  <div class="container">
-    <span class="section-tag">Testimonial</span>
-    <h2 class="section-title">What our customers say</h2>
+  <section class="testimonial-sections">
+  <div class="testimonial-section">
+  <span class="section-tag">
+  <img src="images/mini.jpg" alt="icon" class="tag-icon">
+  Testimonial
+</span>
  
-    <div class="testimonial-header">
-      <div></div>
-      <div class="testimonial-nav">
-        <button class="nav-btn prev">‹</button>
-        <button class="nav-btn next">›</button>
-      </div>
+ 
+  
+  <div class="testimonial-header">
+    <h2>What our customers say</h2>
+    <div class="testimonial-nav">
+      <button class="nav-btn">‹</button>
+      <button class="nav-btn">›</button>
     </div>
- 
+  </div>
+
+  <!-- rest of testimonial cards here -->
+</div>
+
+  <div class="testimonial-cards">
+
+    <!-- Testimonial 1 -->
     <div class="testimonial-wrapper">
-      <!-- Card 1 -->
+      <span class="quote-icon">
+        <img src="images/csay.png" alt="quote"></img></a>
+      </span>
       <div class="testimonial-card">
-        <div class="quote-icon">❝</div>
         <div class="stars">★★★★★</div>
         <p>
           “I would recommend practitioners at this center to everyone! They are great to work with and are excellent trainers. Thank you all!”
         </p>
-        <div class="author">
-          <img src="images/test1.png" alt="Daniel Craig">
+        <div class="profile">
+          <img src="images/test1.png" alt="Profile" class="profile-img">
           <div>
-            <h4>Daniel Craig</h4>
-            <span>CO FOUNDER</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- Card 2 -->
-      <div class="testimonial-card">
-        <div class="quote-icon">❝</div>
-        <div class="stars">★★★★★</div>
-        <p>
-          “I would recommend practitioners at this center to everyone! They are great to work with and are excellent trainers. Thank you all!”
-        </p>
-        <div class="author">
-          <img src="images/test2.png" alt="Amelia Dyer">
-          <div>
-            <h4>Amelia Dyer</h4>
-            <span>MANAGER</span>
-          </div>
-        </div>
-      </div>
- 
-      <!-- Card 3 -->
-      <div class="testimonial-card">
-        <div class="quote-icon">❝</div>
-        <div class="stars">★★★★★</div>
-        <p>
-          “I would recommend practitioners at this center to everyone! They are great to work with and are excellent trainers. Thank you all!”
-        </p>
-        <div class="author">
-          <img src="images/test3.png" alt="Henry Cavil">
-          <div>
-            <h4>Henry Cavil</h4>
-            <span>CEO & FOUNDER</span>
+            <span class="profile-name">Daniel Craig</span>
+            <span class="profile-role">Supervisor</span>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-wrapper">
+      <span class="quote-icon">
+        <img src="images/csay.png" alt="quote"></img></a>
+      </span>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>
+          “I would recommend practitioners at this center to everyone! They are great to work with and are excellent trainers. Thank you all!”
+        </p>
+        <div class="profile">
+          <img src="images/test2.png" alt="Profile" class="profile-img">
+          <div>
+            <span class="profile-name">Emma Greed</span>
+            <span class="profile-role">Customer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-wrapper">
+     <span class="quote-icon">
+        <img src="images/csay.png" alt="quote"></img></a>
+      </span>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>
+          “I would recommend practitioners at this center to everyone! They are great to work with and are excellent trainers. Thank you all!”
+        </p>
+        <div class="profile">
+          <img src="images/test3.png" alt="Profile" class="profile-img">
+          <div>
+            <span class="profile-name">Henry Cavil</span>
+            <span class="profile-role">Co Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 <!-- ===== Footer Placeholder (Load from footer.html) ===== -->

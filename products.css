@@ -1,16 +1,17 @@
+/* Body-specific styles */
 body {
-  background-color: rgb(250, 248, 248); /* Replace with your desired color */
+  background-color: rgb(250, 248, 248); /* Set the desired background color */
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif; /* Optional: Set your default font */
 }
-* 
 
-{
+/* Global styles: Apply box-sizing to all elements and reset margins/paddings */
+* {
+  
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  box-sizing: inherit; /* Inherit box-sizing from body */
 }
 
 /* Navbar */
@@ -102,6 +103,11 @@ body {
   color: rgb(14, 13, 13);
 }
 
+.search-wrapper {
+  position: relative; /* makes popup follow this container */
+  display: inline-block;
+}
+ 
 /* Search Button */
 .btn-search {
   background-color: white;
@@ -114,61 +120,57 @@ body {
   justify-content: center;
   align-items: center;
   transition: background 0.3s ease;
-  margin-left: 15px;
-  margin-top: -5px;
 }
-
+ 
 .btn-search:hover {
   background-color: #eaeaea;
 }
-
-.btn-search svg {
-  stroke: #007bff;
-  width: 18px;
-  height: 18px;
-}
-.search-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
+ 
 .search-popup {
   position: absolute;
-  top: 75px; /* Pushes the popup below the button */
-  right: 70px; /* Adjusts the popup to the left */
+  top: calc(100% + 20px); /* moved further down */
+  left: 60%;
+  transform: translateX(-50%);
   background-color: white;
-  padding: 10px;
-  border: 2px solid #007bff; /* Blue border */
+  border: 2px solid #007bff;
   border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 10px;
+  display: none; /* hidden initially */
   z-index: 1000;
 }
 
-/* Triangle Arrow */
+.search-popup form {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between input and button */
+}
+ 
+ 
+/* Popup arrow */
 .search-popup::before {
   content: "";
   position: absolute;
-  top: -10px; /* Positions the arrow above the popup */
-  left: 50%; /* Centers the arrow horizontally */
-  transform: translateX(-50%); /* Adjusts for exact centering */
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
   border-width: 0 10px 10px 10px;
   border-style: solid;
-  border-color: transparent transparent #007bff transparent; /* Blue arrow */
+  border-color: transparent transparent #007bff transparent;
 }
-
-/* Inner triangle to create a layered arrow effect */
+ 
 .search-popup::after {
   content: "";
   position: absolute;
-  top: -8px; /* Slightly lower than the ::before arrow */
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   border-width: 0 9px 9px 9px;
   border-style: solid;
-  border-color: transparent transparent white transparent; /* White inner triangle */
+  border-color: transparent transparent white transparent;
 }
-
+ 
+/* Input + Button */
 .search-popup input[type="text"] {
   padding: 8px;
   width: 200px;
@@ -178,7 +180,7 @@ body {
   font-size: 14px;
   color: #000;
 }
-
+ 
 .search-popup button {
   background-color: #007bff;
   color: white;
@@ -186,9 +188,8 @@ body {
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
 }
-
+ 
 .search-popup button:hover {
   background-color: #0056b3;
 }
@@ -235,12 +236,7 @@ body {
   width: 16px;
   height: 16px;
 }
-
 /* Products Hero */
-/* Hero Section */
-/* Hero Section Wrapper */
-/* Hero Wrapper */
-/* Hero Wrapper */
 .hero {
   display: flex;
   border-radius: 15px;     /* ✅ four sides */
@@ -524,13 +520,7 @@ body {
   --s: 22px; /* size of inner curve */
   --x: 11px; /* horizontal offset (no percentane) */
   --y: 11px; /* vertical offset (no percentage) */
-  width: 250px;
-  aspect-ratio: 1;
-  background: rgb(163, 66, 66);
-  border-radius: var(--r);
-  --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
-  --_g:conic-gradient(from 90deg at calc(100% - var(--r)) calc(100% - var(--r)),#0000 25%,#000 0);
-  --_d:(var(--s) + var(--r));
+  width: 250px; aspect-ratio: 1; background: #e3e4e4; border-radius: var(--r); --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%); --_g:conic-gradient(at calc(100% - var(--r)) var(--r),#0000 25%,#000 0); --_d:(var(--s) + var(--r));
   mask:
     calc(100% - var(--_d) - var(--x)) 100% var(--_m),
     100% calc(100% - var(--_d) - var(--y)) var(--_m),
@@ -1305,34 +1295,41 @@ body {
   width: 100%;
   box-sizing: border-box; /* ensures padding/border won't break width */
 }
-/* ------------------- */
-/* Testimonial Section */
-/* ------------------- */
-/* Footer section*/
+/* Reset body and html margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Optional: Set your default font */
+}
+
+/* Top Bar - Full width */
 .top-bar {
   background: #067ec4;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 80px;
+  padding: 24px 0;  /* Remove horizontal padding */
+  width: 100%;      /* Ensure it takes full width */
   font-size: 11px;
 }
- 
+
 /* Left Menu */
 .menu {
   display: flex;
   gap: 3px;
   align-items: center;
-    margin-left: 50px;
+  margin-left: 50px;
 }
- 
+
 .menu a {
   color: #fff;
   text-decoration: none;
   font-weight: 300;
 }
- 
+
 /* Dot Separator */
 .dot {
   width: 4px;
@@ -1342,14 +1339,14 @@ body {
   display: inline-block;
   margin: 0 5px;
 }
- 
+
 /* Right Contact Section */
 .right {
   display: flex;
   gap: 25px;
   align-items: center;
 }
- 
+
 .contact-item {
   display: flex;
   align-items: center;
@@ -1357,7 +1354,7 @@ body {
   color: #fff;
   font-size: 14px;
 }
- 
+
 .icon-circle {
   background: #fff;
   color: #464647;
@@ -1369,15 +1366,14 @@ body {
   align-items: center;
   font-size: 14px;
 }
- 
 
-
-/* Outer body / 2-column grid */
+/* Footer Body - Full width */
 .FTR-body {
-  padding: 36px 0;
+  padding: 36px 0; /* Adjust vertical padding */
   background: url('images/footerbg.png') no-repeat center bottom;
-   background-size:  100% auto;
+  background-size: 100% auto;
   background-color: white;
+  width: 100%;      /* Ensure it takes full width */
   --ftr-blue: #0078c8;
   --ftr-accent: #0b78c8;
   --ftr-text: #0b3b5a;
@@ -1386,22 +1382,30 @@ body {
   color: var(--ftr-text);
   box-sizing: border-box;
   position: relative;
-  
 }
+
+/* Footer Grid - Full width */
 .FTR-body-grid {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 40px;
+  max-width: 100%;  /* Ensure it takes full width */
+  margin: 0;        /* Remove margin */
+  padding: 0;       /* Remove padding */
   display: grid;
   grid-template-columns: 280px 1fr; /* left brand (sidebar) + right flexible */
   gap: 40px;
   align-items: start;
   box-sizing: border-box;
 }
- 
+
 /* Column A: Brand */
 .FTR-col-brand { box-sizing: border-box; }
-.FTR-logo { height: 170px; width: auto; display:block; margin-left: -20px;}
+
+.FTR-logo {
+  height: 170px;
+  width: auto;
+  display: block;
+  margin-left: -20px;
+}
+
 .FTR-desc {
   font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
   font-size: 13px;
@@ -1409,64 +1413,78 @@ body {
   color: #444;   /* soft dark gray */
   max-width: 360px;  /* keeps line length readable */
 }
-.FTR-socials { display:flex; gap:10px; margin-top:8px; }
-.FTR-social {
-  width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
-  text-decoration:none; font-size:14px; color: rgb(8, 77, 8);
-  background: rgba(57,153,90,0.06); border:1px solid rgba(11,120,200,0.04);
+
+.FTR-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
 }
- 
+
+.FTR-social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: rgb(8, 77, 8);
+  background: rgba(57, 153, 90, 0.06);
+  border: 1px solid rgba(11, 120, 200, 0.04);
+}
+
 /* Column B: Main (right) */
 .FTR-col-main {
-  display:flex;
-  flex-direction:column;
-  gap:28px;
-  margin-left:15%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;  /* Remove margin */
 }
- 
+
 /* Headline (inside right column) */
 .FTR-headline {
   color: #0077ccd4;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 700;         /* Bold */
-  font-size: 32px;          /* Adjust as per your screenshot */
+  font-weight: 700;  /* Bold */
+  font-size: 32px;    /* Adjust as per your screenshot */
   line-height: 1.4;
-  color: #0073cf;           /* Blue color */
+  color: #0073cf;     /* Blue color */
   margin: 20px 0;
   margin-top: -2px;
   margin-bottom: -2px;
 }
- 
+
 /* Inner right-column grid: 3 blocks horizontal */
 .FTR-main-grid-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* equal 3 columns (links | categories | address) */
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns (links | categories | address) */
   gap: 50px;
   align-items: start;
+  margin: 0;      /* Remove margin */
+  padding: 0;     /* Remove padding */
   box-sizing: border-box;
-  margin-bottom: -10px;
 }
- 
+
 /* Block titles */
 .FTR-block-title {
-  font-size:16px;
-  font-weight:700;
-  margin:0 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
   color: #0073cf;
   font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
 }
- 
+
 /* Split links (for both lists) */
 .FTR-split-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom:8px;
   grid-gap: 8px 30px; /* spacing between rows & columns */
   padding: 0;
   margin: 0;
   white-space: nowrap; /* Prevent text breaking into multiple lines */
 }
- 
+
 .FTR-links-list {
   gap: 12px 55px; /* space between rows & columns */
   font-size: 14px;
@@ -1474,12 +1492,11 @@ body {
   list-style: none;
   line-height: 1.5;
 }
- 
-/* ✅ Added row spacing for links */
+
 .FTR-links-list li {
-  margin-bottom: 5px; /* adjust gap as needed */
+  margin-bottom: 5px; /* Adjust gap as needed */
 }
- 
+
 .FTR-links-list a {
   font-size: 13px;
   font-weight: 400;
@@ -1489,21 +1506,23 @@ body {
   max-width: 360px;  /* keeps line length readable */
   text-decoration: none;
 }
+
 .FTR-links-list a:hover {
-  color:var(--ftr-accent);
+  color: var(--ftr-accent);
 }
- 
+
 /* Items */
 .category-list li {
   font-size: 15px;
   color: #333;
   list-style: none;
 }
+
 .category-list ul {
   list-style: none;
-  gap:10px;
+  gap: 10px;
 }
- 
+
 /* Address block */
 .FTR-address {
   font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
@@ -1512,44 +1531,59 @@ body {
   color: #333;          /* match your footer text color */
   line-height: 1.7;     /* consistent spacing */
 }
- 
- 
+
 /* Legal row (inside right column) */
 .FTR-bottom {
   border-top: 1px solid #e9f0f3;
   padding-top: 12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
+
 .FTR-legal {
-  display:flex;
-  gap:6px;
-  align-items:center;
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
+
 .FTR-legal a {
-  color: #333; text-decoration:none; font-size:13px; }
-.FTR-divider { color:#333; }
-.FTR-copy { color:#333; font-size:13px; }
- 
-/* Responsive */
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.FTR-divider {
+  color: #333;
+}
+
+.FTR-copy {
+  color: #333;
+  font-size: 13px;
+}
+
+/* Responsive Footer - Full width on smaller screens */
 @media (max-width: 980px) {
-  .FTR-body-grid { grid-template-columns: 1fr; padding: 0 28px; gap: 28px; }
-  .FTR-main-grid-inner { grid-template-columns: 1fr; gap: 22px; }
-  .FTR-split-links { grid-template-columns: 1fr 1fr; } /* keep split on medium where space allows */
-  .FTR-headline { font-size:26px; }
+  .FTR-body-grid {
+    grid-template-columns: 1fr;  /* 1 column on smaller screens */
+    padding: 0;                 /* Remove padding */
+    gap: 28px;
+  }
 }
+
 @media (max-width: 560px) {
-  .FTR-top-strip { padding: 12px 18px; flex-direction:column; align-items:flex-start; gap:8px; }
-  .FTR-body-grid { padding: 0 18px; }
-  .FTR-main-grid-inner { grid-template-columns: 1fr; }
-  .FTR-split-links { grid-template-columns: 1fr; } /* stack 4+4 lists on mobile */
-  .FTR-headline { font-size:22px; }
-  .FTR-bottom { flex-direction:column; align-items:flex-start; gap:8px; padding-top:12px; }
+  .FTR-body-grid {
+    padding: 0;  /* Remove padding */
+  }
+
+  .FTR-main-grid-inner {
+    grid-template-columns: 1fr;  /* 1 column on mobile */
+  }
 }
-  /* Back to Top Button */
+
+/* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -1565,9 +1599,9 @@ body {
   cursor: pointer;
   display: none; /* hidden by default */
   z-index: 1000;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
- 
+
   /* Center the arrow perfectly */
   display: flex;
   align-items: center;
@@ -1583,4 +1617,3 @@ body {
 .back-to-top:focus {
   outline: none;
 }
-
